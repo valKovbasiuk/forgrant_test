@@ -1,12 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crypto Exchenge</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+
+
+    <title>Crypto Exchange</title>
 </head>
-<body>
-hello!
+
+<body class="main">
+    <div>
+        <div class="header container">
+            <div class="title">
+                <span class="title__text">
+
+                    Select currency to exhange:
+                </span>
+            </div>
+            <select class="currency" name="currency" id="currency-select">
+                <option class="uppercase" value="USD" selected="selected">usd</option>
+                <option class="uppercase" value="EUR">eur</option>
+                <option class="uppercase" value="RUB">rub</option>
+                <option class="uppercase" value="GBP">gbp</option>
+            </select>
+        </div>
+        <div class="commodities">
+            <ul class="container">
+                <li class="commodity" id="ETH">
+                    <div class="commodities__name">ethereum
+                    </div>
+                    <img class="commodities__pic" src="" alt="">
+                    <table class="commodities__props">
+                        <tr class="field price">
+                            <td class="field__name field__name--price">price</td>
+                            <td class="field__value" data-set="last"></td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--percent">percent change</td>
+                            <td class="field__value toggle percent-on">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--secondary">hour change</td>
+                            <td class="field__value" data-set="hour"></td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--secondary">day change</td>
+                            <td class="field__value" data-set="day"></td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--secondary">week change</td>
+                            <td class="field__value" data-set="week"></td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--secondary">month change</td>
+                            <td class="field__value" data-set="month"></td>
+                        </tr>
+                    </table>
+                </li>
+                <li class="commodity" id="LTC">
+                    <div class="commodities__name">ethereum
+                    </div>
+                    <img class="commodities__pic" src="" alt="">
+                    <table class="commodities__props">
+                        <tr class="field price">
+                            <td class="field__name field__name--price">price</td>
+                            <td class="field__value" data-set="last"></td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--percent">percent change</td>
+                            <td class="field__value toggle percent-on">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--secondary">hour change</td>
+                            <td class="field__value" data-set="hour"></td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--secondary">day change</td>
+                            <td class="field__value" data-set="day"></td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--secondary">week change</td>
+                            <td class="field__value" data-set="week"></td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--secondary">month change</td>
+                            <td class="field__value" data-set="month"></td>
+                        </tr>
+                    </table>
+                </li>
+                <li class="commodity" id="BTC">
+                    <div class="commodities__name">ethereum
+                    </div>
+                    <img class="commodities__pic" src="" alt="">
+                    <table class="commodities__props">
+                        <tr class="field price">
+                            <td class="field__name field__name--price">price</td>
+                            <td class="field__value" data-set="last"></td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--percent">percent change</td>
+                            <td class="field__value toggle percent-on">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--secondary">hour change</td>
+                            <td class="field__value" data-set="hour"></td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--secondary">day change</td>
+                            <td class="field__value" data-set="day"></td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--secondary">week change</td>
+                            <td class="field__value" data-set="week"></td>
+                        </tr>
+                        <tr class="field price">
+                            <td class="field__name field__name--secondary">month change</td>
+                            <td class="field__value" data-set="month"></td>
+                        </tr>
+                    </table>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+
+    <script src="./scripts/app.js" defer></script>
 </body>
+
 </html>

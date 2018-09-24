@@ -62,7 +62,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task("default", ["index.html", "sass", "copy:img", "serv", "scripts"], function () {
-    gulp.watch("./src/index.html", ["index.html"]);
+    gulp.watch("./src/*.html", ["index.html"]);
     gulp.watch("./src/scss/**/*.scss", ["sass"]);
     // gulp.watch("./src/templates/**/*.html", ["nunjucks"]);
     gulp.watch("./src/img/**/*", ["copy:img"]);
