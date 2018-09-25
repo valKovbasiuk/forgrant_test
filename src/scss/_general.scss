@@ -27,16 +27,26 @@
   max-width: 985px;
   display: flex;
   flex-direction: row;
-  margin: 70px auto 53px;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header {
-  opacity: 0.02;
+  margin-top: 70px;
+  margin-bottom: 53px;
+  align-items: center;
   border-radius: 10px;
-  background-color: #fcfcfc;
+  background-color: #92e8fe02;
+  border: solid 1px #92e8fe10;
+  border-radius: 10px;
 }
 
 .title {
+  height: 100%;
+  width: calc(100% - 322px);
+  min-width: 400px;
+  text-align: center;
   &__text {
     opacity: 1;
     font-family: Roboto;
@@ -50,13 +60,26 @@
   }
 }
 
-.commodity {
-  max-width: 308px;
-  &__name {
-    display: table-cell;
-    text-align: center;
-    text-transform: lowercase;
+.currencies {
+  height: 55px;
+  margin: 22px 24px 21px 0;
+  width: 297px;
+  min-width: 200px;
+}
 
+.commodity {
+  background-position: -78px -111px;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 20px 27px;
+  text-align: center;
+  width: 31.5%;
+  max-width: 308px;
+  min-width: 280px;
+  margin-bottom: 20px;
+  &__name {
+    display: inline-block;
+    text-transform: lowercase;
     font-family: Roboto;
     font-size: 22px;
     font-weight: bold;
@@ -65,11 +88,32 @@
     letter-spacing: normal;
     text-align: left;
     color: #ffffff;
-
     &::first-letter {
       text-transform: uppercase;
     }
   }
+  &__pic {
+    //   position: relative;
+  }
+  &__props {
+    box-sizing: content-box;
+    width: 100%;
+  }
+}
+
+#BTC {
+  background-color: rgb(52, 14, 0);
+  background-image: url(../img/png/BTC_bgrnd.png);
+}
+
+#ETH {
+  background-color: rgb(32, 76, 52);
+  background-image: url(../img/png/BTC_bgrnd.png);
+}
+
+#LTC {
+  background-color: rgb(51, 51, 51);
+  background-image: url(../img/png/BTC_bgrnd.png);
 }
 
 .field {
@@ -104,7 +148,6 @@
     }
 
     &--secondary {
-      opacity: 0.2;
       font-size: 14px;
       font-weight: bold;
       font-style: normal;
@@ -131,7 +174,6 @@
       font-style: normal;
       font-stretch: normal;
       letter-spacing: normal;
-      text-align: left;
       color: #ffffff;
     }
     &--negative {
@@ -168,6 +210,8 @@
 .slider:before {
   position: absolute;
   content: "";
+  background-image: url(../img/png/toggle.png);
+  background-position: center;
   height: 20px;
   width: 20px;
   left: 0px;

@@ -323,29 +323,53 @@ template {
   max-width: 985px;
   display: flex;
   flex-direction: row;
-  margin: 70px auto 53px; }
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto; }
 
 .header {
-  opacity: 0.02;
+  margin-top: 70px;
+  margin-bottom: 53px;
+  align-items: center;
   border-radius: 10px;
-  background-color: #fcfcfc; }
+  background-color: #92e8fe02;
+  border: solid 1px #92e8fe10;
+  border-radius: 10px; }
 
-.title__text {
-  opacity: 1;
-  font-family: Roboto;
-  font-size: 32px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #ffffff; }
+.title {
+  height: 100%;
+  width: calc(100% - 322px);
+  min-width: 400px;
+  text-align: center; }
+  .title__text {
+    opacity: 1;
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff; }
+
+.currencies {
+  height: 55px;
+  margin: 22px 24px 21px 0;
+  width: 297px;
+  min-width: 200px; }
 
 .commodity {
-  max-width: 308px; }
+  background-position: -78px -111px;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 20px 27px;
+  text-align: center;
+  width: 31.5%;
+  max-width: 308px;
+  min-width: 280px;
+  margin-bottom: 20px; }
   .commodity__name {
-    display: table-cell;
-    text-align: center;
+    display: inline-block;
     text-transform: lowercase;
     font-family: Roboto;
     font-size: 22px;
@@ -357,6 +381,21 @@ template {
     color: #ffffff; }
     .commodity__name::first-letter {
       text-transform: uppercase; }
+  .commodity__props {
+    box-sizing: content-box;
+    width: 100%; }
+
+#BTC {
+  background-color: #340e00;
+  background-image: url(../img/png/BTC_bgrnd.png); }
+
+#ETH {
+  background-color: #204c34;
+  background-image: url(../img/png/BTC_bgrnd.png); }
+
+#LTC {
+  background-color: #333333;
+  background-image: url(../img/png/BTC_bgrnd.png); }
 
 .field {
   font-family: Roboto; }
@@ -382,7 +421,6 @@ template {
       text-align: left;
       color: #ffffff; }
     .field__name--secondary {
-      opacity: 0.2;
       font-size: 14px;
       font-weight: bold;
       font-style: normal;
@@ -406,7 +444,6 @@ template {
       font-style: normal;
       font-stretch: normal;
       letter-spacing: normal;
-      text-align: left;
       color: #ffffff; }
     .field__value--negative {
       color: #c80e24; }
@@ -436,6 +473,8 @@ template {
 .slider:before {
   position: absolute;
   content: "";
+  background-image: url(../img/png/toggle.png);
+  background-position: center;
   height: 20px;
   width: 20px;
   left: 0px;
