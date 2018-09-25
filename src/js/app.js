@@ -6,6 +6,15 @@ const currencySymbols = {
   EUR: "€"
 };
 
+var optionValue = "USD";
+
+function getValue(selectOption) {
+  optionValue = selectOption.value;
+  console.log(optionValue);
+
+  update(optionValue);
+}
+
 function numberWithSpaces(x) {
   let parts = (Math.round(x * 100) / 100)
     .toFixed(2)
@@ -31,9 +40,11 @@ function isNegative(change) {
 }
 
 function update() {
-  var selectedCurrencyValue = document
-    .querySelector("option[value][selected='selected']")
-    .getAttribute("value");
+  // var selectedCurrencyValue = document
+  //   .querySelector("option[value][selected='selected']")
+  //   .getAttribute("value");
+
+  var selectedCurrencyValue = optionValue;
 
   cryptoCurrencies.forEach(function(cryptoCurrency) {
     var request =
