@@ -8,11 +8,71 @@ const currencySymbols = {
 
 var optionValue = "USD";
 
+var dataJSON;
+
 function getValue(selectOption) {
   optionValue = selectOption.value;
-  console.log(optionValue);
-
   update(optionValue);
+}
+
+function updateChange(commodity) {
+  var status = document.getElementById(commodity).querySelector("input")
+    .checked;
+
+  var elementList = Array.from(
+    document
+      .getElementById(commodity)
+      .querySelectorAll("td[data-set]:not([data-set='last'])")
+  ).map(item => item.getAttribute("data-set"));
+
+  // if (status) {
+  //   elementList.forEach(function(datasetValue) {
+  //     let change = dataJSON.changes.percent[datasetValue];
+
+  //     if (!isNegative(change)) {
+  //       var changeDecor = "+" + priceChange(change) + "%";
+  //     } else {
+  //       var changeDecor = priceChange(change) + "%";
+  //     }
+
+  //     document
+  //       .getElementById(commodity)
+  //       .querySelector(
+  //         "[data-set='" + datasetValue + "']"
+  //       ).textContent = changeDecor;
+
+  //     if (isNegative(change)) {
+  //       document
+  //         .getElementById(commodity)
+  //         .querySelector("[data-set='" + datasetValue + "']")
+  //         .classList.add("field__value--negative");
+  //     }
+  //   });
+  // } else {
+  // elementList.forEach(function(datasetValue) {
+  //   let change = dataJSON.changes.price[datasetValue];
+  //   if (!isNegative(change)) {
+  //     var changeDecor =
+  //       "+" + priceChange(change) + currencySymbols[selectedCurrencyValue];
+  //   } else {
+  //     var changeDecor =
+  //       priceChange(change) + currencySymbols[selectedCurrencyValue];
+  //   }
+  //   document
+  //     .getElementById(commodity)
+  //     .querySelector(
+  //       "[data-set='" + datasetValue + "']"
+  //     ).textContent = changeDecor;
+  //   if (isNegative(change)) {
+  //     document
+  //       .getElementById(commodity)
+  //       .querySelector("[data-set='" + datasetValue + "']")
+  //       .classList.add("field__value--negative");
+  //   }
+  // });
+  // }
+
+  console.log(status);
 }
 
 function numberWithSpaces(x) {
@@ -57,6 +117,7 @@ function update() {
         return response.json();
       })
       .then(data => {
+        dataJSON = data;
         var elementList = Array.from(
           document
             .getElementById(cryptoCurrency)
