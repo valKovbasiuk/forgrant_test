@@ -353,6 +353,9 @@ template {
     color: #ffffff; }
 
 .currencies {
+  border-radius: 5px;
+  background-color: #92e8fe02;
+  border: solid 0.2px #92e8fe;
   height: 55px;
   margin: 22px 24px 21px 0;
   width: 297px;
@@ -366,9 +369,10 @@ template {
   text-align: center;
   width: 31.5%;
   max-width: 308px;
-  min-width: 280px;
+  min-width: 300px;
   margin-bottom: 20px; }
   .commodity__name {
+    position: relative;
     display: inline-block;
     text-transform: lowercase;
     font-family: Roboto;
@@ -383,19 +387,33 @@ template {
       text-transform: uppercase; }
   .commodity__props {
     box-sizing: content-box;
-    width: 100%; }
+    width: 100%;
+    margin-top: -16px; }
 
 #BTC {
   background-color: #340e00;
   background-image: url(../img/png/BTC_bgrnd.png); }
+  #BTC .commodity__pic {
+    margin-left: 11px;
+    margin-top: -4px;
+    margin-bottom: 3px; }
 
 #ETH {
+  background-position: 0 0;
   background-color: #204c34;
-  background-image: url(../img/png/BTC_bgrnd.png); }
+  background-image: url(../img/png/ethereum_bgrnd.png); }
+  #ETH .commodity__pic {
+    margin-left: -17px;
+    margin-top: -68px;
+    margin-bottom: -135px; }
 
 #LTC {
+  background-position: 0 0;
   background-color: #333333;
-  background-image: url(../img/png/BTC_bgrnd.png); }
+  background-image: url(../img/png/litecoin_bgrnd.png); }
+  #LTC .commodity__pic {
+    margin-top: 0px;
+    margin-bottom: 0px; }
 
 .field {
   font-family: Roboto; }
@@ -451,7 +469,7 @@ template {
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
+  width: 45px;
   height: 34px; }
 
 .switch input {
@@ -461,11 +479,11 @@ template {
   position: absolute;
   cursor: pointer;
   right: 0;
-  bottom: 0;
-  width: 42px;
+  bottom: 9px;
+  width: 38px;
   height: 16px;
   border-radius: 7.6px;
-  background-color: #3eb5f1;
+  background-color: #c4c4c4;
   box-shadow: inset 1.4px 2.7px 7px 0 rgba(27, 36, 40, 0.56);
   -webkit-transition: 0.4s;
   transition: 0.4s; }
@@ -475,24 +493,24 @@ template {
   content: "";
   background-image: url(../img/png/toggle.png);
   background-position: center;
-  height: 20px;
-  width: 20px;
-  left: 0px;
-  bottom: -2px;
+  height: 22px;
+  width: 22px;
+  right: -1px;
+  bottom: -3px;
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s; }
 
 input:checked + .slider {
-  background-color: #c4c4c4; }
+  background-color: #3eb5f1; }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #c4c4c4; }
+  box-shadow: 0 0 1px #3eb5f1; }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px); }
+  -webkit-transform: translateX(-22px);
+  -ms-transform: translateX(-22px);
+  transform: translateX(-22px); }
 
 /* Rounded sliders */
 .slider.round {
@@ -500,3 +518,19 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%; }
+
+@media (max-width: 1027px) {
+  .container {
+    justify-content: space-around;
+    align-items: center;
+    max-width: 768px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto; }
+  .currencies {
+    margin-left: auto;
+    margin-right: auto; }
+  .title__text {
+    font-size: 24px; } }
